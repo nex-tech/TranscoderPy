@@ -26,5 +26,6 @@ setup(
     packages=[
         'transcoder'
     ],
+    zip_safe=False,
 )
 
