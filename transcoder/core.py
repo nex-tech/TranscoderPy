@@ -8,7 +8,7 @@ except ImportError:
 
 
 class Transcoder(object):
-    def __init__(self, api_key, api_version=None, base_url=None, test=False, timeout=None):
+    def __init__(self, api_username, api_key, api_version=None, base_url=None, test=False, timeout=None):
 
         if base_url and api_version:
             raise TranscoderError('Cannot set both `base_url` and `api_version`.')
@@ -23,11 +23,12 @@ class Transcoder(object):
 
             self.base_url = '{0}{1}/'.format(self.base_url, api_version)
 
+        self.api_username = api_username
         self.api_key = api_key
 
         self.test = test
 
-        args = (self.base_url, self.api_key)
+        args = (self.base_url, api_username, self.api_key)
 
         kwargs = {
             'api_version': api_version,

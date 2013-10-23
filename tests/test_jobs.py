@@ -1,14 +1,14 @@
 import unittest
 from mock import patch
 
-from test_util import TEST_API_KEY, load_response
+from test_util import TEST_API_USERNAME, TEST_API_KEY, load_response
 from transcoder import Transcoder
 
 
 class TestJobs(unittest.TestCase):
 
     def setUp(self):
-        self.client = Transcoder(api_key=TEST_API_KEY)
+        self.client = Transcoder(api_username=TEST_API_USERNAME, api_key=TEST_API_KEY)
 
 
     @patch("requests.Session.post")

@@ -6,6 +6,7 @@ from utils import __version__
 class HTTPBackend(object):
     def __init__(self,
                  base_url,
+                 api_username,
                  api_key,
                  resource_name=None,
                  api_version=None,
@@ -29,6 +30,7 @@ class HTTPBackend(object):
             'verify': verify
         }
 
+        self.api_username = api_username
         self.api_key = api_key
         self.test = test
         self.api_version = api_version
@@ -43,7 +45,7 @@ class HTTPBackend(object):
         headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'ApiKey agabel:%s' % self.api_key,
+            'Authorization': 'ApiKey %s:%s' % (self.api_username, self.api_key),
             'User-Agent': 'transcoder-py v{0}'.format(__version__)
         }
 

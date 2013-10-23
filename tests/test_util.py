@@ -2,6 +2,7 @@ from collections import namedtuple
 import json
 import os
 
+TEST_API_USERNAME = 'user'
 TEST_API_KEY = 'abcd123'
 
 MockResponse = namedtuple("Response", "status_code, json, content")
