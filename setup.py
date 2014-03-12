@@ -1,18 +1,17 @@
 #!/usr/bin/python
 
-from setuptools import setup
-from transcoder.utils import __version__
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-
-setup(
-    name='transcoder',
-    version=__version__,
-    description='Integration library for the Nex-Tech transcoder',
-    long_description=open('README.md', 'r').read(),
-    author='Austin Gabel',
-    author_email='agabel@gmail.com',
-    url='https://github.com/nex-tech/TranscoderPy',
-    classifiers=[
+config = {
+    'description': 'Integration library for the Nex-Tech transcoder',
+    'author': 'Austin Gabel',
+    'author_email': 'agabel@gmail.com',
+    'download_url': 'https://github.com/nex-tech/TranscoderPy',
+    'version': '0.2',
+    'classifiers': [
         "Development Status :: 5 - Production/Stable",
         "Framework :: Django",
         "Intended Audience :: Developers",
@@ -20,12 +19,11 @@ setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development"
     ],
-    install_requires=[
-        'requests>=1.0'
-    ],
-    packages=[
-        'transcoder',
-    ],
-    zip_safe=False,
-)
+    'install_requires': ['requests'],
+    'packages': ['transcoder'],
+    'zip_safe': False,
+    'name': 'transcoder',
+}
+
+setup(**config)
 
