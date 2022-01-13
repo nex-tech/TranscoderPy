@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import requests
 from .exceptions import TranscoderResponseError
 from .utils import __version__

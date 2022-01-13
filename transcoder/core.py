@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 from .http import HTTPBackend
 from .exceptions import TranscoderError
 try:
