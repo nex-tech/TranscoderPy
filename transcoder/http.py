@@ -1,6 +1,6 @@
 import requests
-from exceptions import TranscoderResponseError
-from utils import __version__
+from .exceptions import TranscoderResponseError
+from .utils import __version__
 
 
 class HTTPBackend(object):

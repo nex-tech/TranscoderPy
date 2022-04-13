@@ -1,5 +1,5 @@
-from http import HTTPBackend
-from exceptions import TranscoderError
+from .http import HTTPBackend
+from .exceptions import TranscoderError
 try:
     import json
 except ImportError:
